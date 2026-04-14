@@ -1,0 +1,28 @@
+[2026-04-13 20:53:35] Registro salvo: talhao=Talhao Norte, colhido=1203.00t, perda=89.82%
+[2026-04-13 20:53:45] Resumo exportado para TXT.
+[2026-04-13 20:58:45] Registro salvo: talhao=Talhao Norte, colhido=12520.00t, perda=0.00%
+[2026-04-13 20:58:57] Registro salvo: talhao=Talhao Sul, colhido=36541125.00t, perda=0.00%
+[2026-04-13 20:59:28] Registro salvo: talhao=Talhao Sul, colhido=7000.00t, perda=27.76%
+[2026-04-13 20:59:51] Registro salvo: talhao=Talhao Norte, colhido=12000.00t, perda=0.00%
+[2026-04-13 21:00:06] Registro salvo: talhao=Talhao Sul, colhido=9320.00t, perda=3.82%
+[2026-04-13 21:00:21] Resumo exportado para TXT.
+[2026-04-13 21:00:34] Historico exportado para JSON.
+[2026-04-13 21:01:51] Registro salvo: talhao=Talhao Norte, colhido=11700.00t, perda=1.02%
+[2026-04-13 21:01:59] Registro salvo: talhao=Talhao Sul, colhido=9500.00t, perda=1.96%
+[2026-04-13 21:02:08] Registro salvo: talhao=Talhao Leste, colhido=6200.00t, perda=19.27%
+[2026-04-13 21:05:21] Registro salvo: talhao=Talhao Norte, colhido=11800.00t, perda=0.17%
+[2026-04-13 21:05:28] Registro salvo: talhao=Talhao Sul, colhido=9300.00t, perda=4.02%
+[2026-04-13 21:05:44] Registro salvo: talhao=Talhao Leste, colhido=7200.00t, perda=6.25%
+[2026-04-13 21:05:54] 3 registros enviados ao Oracle.
+[2026-04-14 18:28:31] Registro salvo: talhao=Talhao Norte, colhido=11750.00t, perda=0.59%
+[2026-04-14 18:28:46] Registro salvo: talhao=Talhao Sul, colhido=9230.00t, perda=4.75%
+[2026-04-14 18:29:01] Registro salvo: talhao=Talhao Leste, colhido=7420.00t, perda=3.39%
+[2026-04-14 18:29:33] Registro salvo: talhao=Talhao Oeste, colhido=10200.00t, perda=0.01%
+[2026-04-14 18:29:50] Registro salvo: talhao=Talhao Central, colhido=7200.00t, perda=8.13%
+[2026-04-14 18:30:04] Registro salvo: talhao=Talhao Serra, colhido=3150.00t, perda=50.08%
+[2026-04-14 18:30:22] Registro salvo: talhao=Talhao Vale, colhido=5560.00t, perda=35.86%
+[2026-04-14 18:30:29] Resumo exportado para TXT.
+[2026-04-14 18:30:42] 7 registros enviados ao Oracle.
+[2026-04-14 18:30:48] Historico exportado para JSON.
+[2026-04-14 18:30:58] Resumo exportado para TXT.
+[2026-04-14 18:37:55] Registro salvo: talhao=Talhao Norte, colhido=9860.00t, perda=16.58%

@@ -1,0 +1,14 @@
+=== RESUMO OPERACIONAL ===
+Registros: 7
+Total esperado (t): 62207.50
+Total colhido (t): 54510.00
+Perda media (%): 14.69
+
+=== TABELA DE MEMORIA (cumulativo) ===
+Iteracao 1: talhao=Talhao Vale | acumulado_colhido=5560.00
+Iteracao 2: talhao=Talhao Serra | acumulado_colhido=8710.00
+Iteracao 3: talhao=Talhao Central | acumulado_colhido=15910.00
+Iteracao 4: talhao=Talhao Oeste | acumulado_colhido=26110.00
+Iteracao 5: talhao=Talhao Leste | acumulado_colhido=33530.00
+Iteracao 6: talhao=Talhao Sul | acumulado_colhido=42760.00
+Iteracao 7: talhao=Talhao Norte | acumulado_colhido=54510.00

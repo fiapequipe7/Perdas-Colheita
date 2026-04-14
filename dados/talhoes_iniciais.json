@@ -1,0 +1,44 @@
+﻿[
+  {
+    "id": 1,
+    "nome": "Talhao Norte",
+    "hectares": 120,
+    "produtividade_esperada_t_ha": 98.5
+  },
+  {
+    "id": 2,
+    "nome": "Talhao Sul",
+    "hectares": 95,
+    "produtividade_esperada_t_ha": 102.0
+  },
+  {
+    "id": 3,
+    "nome": "Talhao Leste",
+    "hectares": 80,
+    "produtividade_esperada_t_ha": 96.0
+  },
+  {
+    "id": 4,
+    "nome": "Talhao Oeste",
+    "hectares": 101,
+    "produtividade_esperada_t_ha": 101.0
+  },
+  {
+    "id": 5,
+    "nome": "Talhao Central",
+    "hectares": 75,
+    "produtividade_esperada_t_ha": 104.5
+  },
+  {
+    "id": 6,
+    "nome": "Talhao Serra",
+    "hectares": 68,
+    "produtividade_esperada_t_ha": 92.8
+  },
+  {
+    "id": 7,
+    "nome": "Talhao Vale",
+    "hectares": 89,
+    "produtividade_esperada_t_ha": 97.4
+  }
+]

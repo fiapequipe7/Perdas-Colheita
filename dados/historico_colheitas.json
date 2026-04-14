@@ -1,0 +1,65 @@
+[
+  {
+    "talhao_id": 1,
+    "talhao_nome": "Talhao Norte",
+    "esperado_t": 11820.0,
+    "colhido_t": 11750.0,
+    "perda_percentual": 0.59,
+    "classificacao": "BAIXA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 2,
+    "talhao_nome": "Talhao Sul",
+    "esperado_t": 9690.0,
+    "colhido_t": 9230.0,
+    "perda_percentual": 4.75,
+    "classificacao": "BAIXA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 3,
+    "talhao_nome": "Talhao Leste",
+    "esperado_t": 7680.0,
+    "colhido_t": 7420.0,
+    "perda_percentual": 3.39,
+    "classificacao": "BAIXA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 4,
+    "talhao_nome": "Talhao Oeste",
+    "esperado_t": 10201.0,
+    "colhido_t": 10200.0,
+    "perda_percentual": 0.01,
+    "classificacao": "BAIXA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 5,
+    "talhao_nome": "Talhao Central",
+    "esperado_t": 7837.5,
+    "colhido_t": 7200.0,
+    "perda_percentual": 8.13,
+    "classificacao": "MODERADA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 6,
+    "talhao_nome": "Talhao Serra",
+    "esperado_t": 6310.4,
+    "colhido_t": 3150.0,
+    "perda_percentual": 50.08,
+    "classificacao": "ALTA",
+    "enviado_oracle": true
+  },
+  {
+    "talhao_id": 7,
+    "talhao_nome": "Talhao Vale",
+    "esperado_t": 8668.6,
+    "colhido_t": 5560.0,
+    "perda_percentual": 35.86,
+    "classificacao": "ALTA",
+    "enviado_oracle": true
+  }
+]
