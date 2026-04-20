@@ -12,6 +12,7 @@ Este módulo não contém regras de negócio, apenas interação com o usuário.
 
 """
 import json
+import os
 from pathlib import Path
 
 from db_oracle import buscar_colheitas_oracle, inserir_colheitas_oracle
@@ -111,9 +112,12 @@ def ler_inteiro(msg, min=None, max=None):
         except:
             print("Entrada inválida")
 
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def pausar():
     input("\nPressione ENTER...")
+    limpar_tela()
 
 
 def listar_talhoes(talhoes):
