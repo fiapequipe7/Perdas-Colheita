@@ -1,3 +1,16 @@
+"""
+Módulo de interface com o usuário (UI).
+
+Responsável por:
+- Exibir o menu principal
+- Receber entradas do usuário
+- Controlar o fluxo da aplicação
+- Chamar funções dos módulos de serviço e banco de dados
+
+Este módulo não contém regras de negócio, apenas interação com o usuário.
+
+
+"""
 import json
 from pathlib import Path
 
@@ -22,6 +35,13 @@ RELATORIO_TXT = DADOS_DIR / "relatorio_resumo.txt"
 
 
 def iniciar_menu():
+    """
+       Inicia o menu principal do sistema.
+
+       Permite ao usuário navegar entre as opções disponíveis,
+       como listar talhões, registrar colheitas, visualizar resumos,
+       exportar dados e interagir com o banco Oracle.
+       """
     talhoes = carregar_talhoes_json(TALHOES_JSON)
     colheitas = []
 
