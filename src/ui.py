@@ -8,9 +8,8 @@ Responsável por:
 - Chamar funções dos módulos de serviço e banco de dados
 
 Este módulo não contém regras de negócio, apenas interação com o usuário.
-
-
 """
+
 import json
 import os
 from pathlib import Path
@@ -37,64 +36,71 @@ RELATORIO_TXT = DADOS_DIR / "relatorio_resumo.txt"
 
 def iniciar_menu():
     """
-       Inicia o menu principal do sistema.
-
-       Permite ao usuário navegar entre as opções disponíveis,
-       como listar talhões, registrar colheitas, visualizar resumos,
-       exportar dados e interagir com o banco Oracle.
-       """
+    Inicia o menu principal do sistema.
+    """
     talhoes = carregar_talhoes_json(TALHOES_JSON)
     colheitas = []
 
+    limpar_tela()
+
     while True:
-        print("\n" + "=" * 30)
-        print("   SISTEMA DE COLHEITA")
-        print("=" * 30)
-        print("1 - Listar talhões")
-        print("2 - Registrar colheita")
-        print("3 - Ver resumo")
-        print("4 - Exportar resumo TXT")
-        print("5 - Salvar histórico JSON")
-        print("6 - Enviar para Oracle")
-        print("0 - Sair")
+        print("\n" + "=" * 40)
+        print("🌱 SISTEMA DE COLHEITA DE CANA".center(40))
+        print("=" * 40)
+        print("[1] Listar talhões")
+        print("[2] Registrar colheita")
+        print("[3] Ver resumo")
+        print("[4] Exportar resumo TXT")
+        print("[5] Salvar histórico JSON")
+        print("[6] Enviar para Oracle")
+        print("[0] Sair")
+        print("=" * 40)
 
         opcao = ler_inteiro("Escolha: ", 0, 6)
 
         try:
             match opcao:
                 case 1:
+                    limpar_tela()
                     listar_talhoes(talhoes)
                     pausar()
 
                 case 2:
+                    limpar_tela()
+                    print("📝 REGISTRAR COLHEITA\n")
                     registrar_colheita(talhoes, colheitas)
                     pausar()
 
                 case 3:
+                    limpar_tela()
                     registros = buscar_registros(colheitas)
                     exibir_resumo(registros)
                     pausar()
 
                 case 4:
+                    limpar_tela()
                     registros = buscar_registros(colheitas)
                     exportar_resumo(registros)
                     pausar()
 
                 case 5:
+                    limpar_tela()
                     salvar_json(colheitas)
                     pausar()
 
                 case 6:
+                    limpar_tela()
                     enviar_oracle(colheitas)
                     pausar()
 
                 case 0:
-                    print("Encerrando...")
+                    print("\n🌱 Encerrando o sistema...")
                     break
 
         except Exception as e:
-            print(f"Erro: {e}")
+            print(f"\n❌ Erro: {e}")
             pausar()
+
 
 # ======================
 # FUNÇÕES AUXILIARES UI
@@ -110,28 +116,35 @@ def ler_inteiro(msg, min=None, max=None):
                 continue
             return valor
         except:
-            print("Entrada inválida")
+            print("❌ Entrada inválida")
+
 
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+
 def pausar():
-    input("\nPressione ENTER...")
+    input("\nPressione ENTER para continuar...")
     limpar_tela()
 
 
 def listar_talhoes(talhoes):
+    print("\n📍 TALHÕES DISPONÍVEIS\n" + "-" * 40)
+
     for t in talhoes:
         esperado = calcular_producao_esperada(t)
-        print(f"{t['id']} - {t['nome']} | {esperado:.2f} t")
+        print(f"[{t['id']}] {t['nome']} → {esperado:.2f} t")
+
+    print("-" * 40)
 
 
 def registrar_colheita(talhoes, colheitas):
     listar_talhoes(talhoes)
-    id_escolhido = ler_inteiro("ID: ")
 
+    id_escolhido = ler_inteiro("\nID do talhão: ")
     talhao = next(t for t in talhoes if t["id"] == id_escolhido)
-    colhido = float(input("Toneladas: ").replace(",", "."))
+
+    colhido = float(input("Toneladas colhidas: ").replace(",", "."))
 
     esperado = calcular_producao_esperada(talhao)
     perda = calcular_perda(esperado, colhido)
@@ -149,6 +162,7 @@ def registrar_colheita(talhoes, colheitas):
     colheitas.append(registro)
     registrar_log_texto("Registro criado", LOG_TXT)
 
+    print("\n✅ Registro realizado com sucesso!")
     print(f"Perda: {perda:.2f}% ({registro['classificacao']})")
 
 
@@ -156,15 +170,19 @@ def buscar_registros(memoria):
     try:
         oracle = buscar_colheitas_oracle()
         pendentes = [c for c in memoria if not c["enviado_oracle"]]
+        print(f"\n🔗 Oracle: {len(oracle)} | Sessão: {len(pendentes)}")
         return oracle + pendentes
     except:
+        print("\n⚠ Usando apenas dados locais.")
         return memoria
 
 
 def exibir_resumo(colheitas):
     resumo = montar_resumo(colheitas)
-    print("\nResumo:")
+
+    print("\n📊 RESUMO\n" + "-" * 40)
     print(resumo)
+    print("-" * 40)
 
 
 def exportar_resumo(colheitas):
@@ -174,14 +192,14 @@ def exportar_resumo(colheitas):
     texto = f"Resumo: {resumo}\nTabela: {tabela}"
     RELATORIO_TXT.write_text(texto)
 
-    print("Exportado!")
+    print("\n✅ Resumo exportado com sucesso!")
 
 
 def salvar_json(colheitas):
     with HISTORICO_JSON.open("w", encoding="utf-8") as f:
         json.dump(colheitas, f, indent=2)
 
-    print("Salvo!")
+    print("\n✅ Histórico salvo com sucesso!")
 
 
 def enviar_oracle(colheitas):
@@ -191,4 +209,4 @@ def enviar_oracle(colheitas):
     for c in pendentes:
         c["enviado_oracle"] = True
 
-    print(f"{qtd} enviados!")
+    print(f"\n✅ {qtd} registros enviados ao Oracle!")
