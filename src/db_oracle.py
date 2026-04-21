@@ -1,4 +1,17 @@
-﻿from __future__ import annotations
+﻿"""
+Módulo de integração com banco de dados Oracle.
+
+Responsável por:
+- Estabelecer conexão com o banco
+- Criar tabela automaticamente (se necessário)
+- Inserir registros de colheita
+- Consultar registros armazenados
+
+Utiliza a biblioteca oracledb.
+
+
+"""
+from __future__ import annotations
 
 import os
 
@@ -97,6 +110,15 @@ def _garantir_tabela(cursor) -> None:
 #Inserir Tabela
 
 def inserir_colheitas_oracle(colheitas: list[dict]) -> int:
+    """
+        Insere registros de colheita no banco Oracle.
+
+        Args:
+            colheitas (list): Lista de dicionários contendo dados das colheitas.
+
+        Returns:
+            int: Quantidade de registros inseridos.
+    """
     if not colheitas:
         return 0
 
@@ -132,6 +154,12 @@ def inserir_colheitas_oracle(colheitas: list[dict]) -> int:
 ##Consultar Tabela
 
 def buscar_colheitas_oracle() -> list[dict]:
+    """
+        Busca registros de colheita no banco Oracle.
+
+        Returns:
+            list: Lista de dicionários com os dados das colheitas.
+        """
     with _obter_conexao_oracle() as conexao:
         with conexao.cursor() as cursor:
             _garantir_tabela(cursor)
